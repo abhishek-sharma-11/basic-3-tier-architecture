@@ -15,6 +15,16 @@ module "load_balancer_private" {
   project_name_prefix = var.project_name_prefix
   vpc_id              = var.vpc_id
   private_subnets     = var.private_subnets
+  my_ip_cidr          = var.my_ip_cidr
+
+  enable_deletion_protection  = var.enable_deletion_protection
+  internal_alb_lc_instance_type = var.internal_alb_lc_instance_type
+  internal_alb_lc_root_volume   = var.internal_alb_lc_root_volume
+  key_pair_name                 = var.key_pair_name
+
+  internal_alb_asg_max_size = var.internal_alb_asg_max_size
+  internal_alb_asg_min_size = var.internal_alb_asg_min_size
+  internal_alb_asg_desried_size = var.internal_alb_asg_desried_size
 }
 
 module "postgres" {

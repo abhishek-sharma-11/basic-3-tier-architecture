@@ -70,6 +70,7 @@ The project has the following folders and files:
 | private_subnets |  | `list` | n/a | yes |
 | public_subnets |  | `list` | n/a | yes |
 
+
 ## Bastion Hosts Inputs
 
 | Name | Description | Type | Default | Required |
@@ -78,3 +79,16 @@ The project has the following folders and files:
 | bastion_instance_type |  | `string` | n/a | yes |
 | bastion_az |  | `string` | n/a | yes |
 | bastion_name |  | `string` | n/a | yes |
+
+
+## Private Load Balancer Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| internal_alb_lc_instance_type |  | `string` | n/a | yes |
+| internal_alb_lc_root_volume |  | `number` | n/a | yes |
+| key_pair_name |  | `string` | n/a | yes |
+| internal_alb_asg_max_size |  | `number` | n/a | yes |
+| internal_alb_asg_min_size |  | `number` | n/a | yes |
+| internal_alb_asg_desried_size |  | `number` | n/a | yes |
+| enable_deletion_protection |  | `bool` | n/a | no |

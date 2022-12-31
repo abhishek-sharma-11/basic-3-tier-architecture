@@ -17,3 +17,15 @@ common_tags = {
 bastion_instance_type = "t3.micro"
 bastion_az            = "ap-south-1a"
 bastion_name          = "Bastion-Host"
+
+#----------------------------------------------
+#----------------- Private LB -----------------
+#----------------------------------------------
+
+internal_alb_lc_instance_type = "t3.micro"
+internal_alb_lc_root_volume = 10
+key_pair_name = "chalo-demo"
+internal_alb_asg_max_size = 2
+internal_alb_asg_min_size = 1
+internal_alb_asg_desried_size = 2
+# enable_deletion_protection = false     --------> Using default value as false. Change to true if required

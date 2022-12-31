@@ -52,3 +52,43 @@ variable "bastion_name" {
   type        = string
   description = ""
 }
+
+#----------------------------------------------
+#----------------- Private LB -----------------
+#----------------------------------------------
+
+variable "enable_deletion_protection" {
+  type = bool
+  description = ""
+  default = false
+}
+
+variable "internal_alb_lc_instance_type" {
+  type = string
+  description = ""
+}
+
+variable "internal_alb_lc_root_volume" {
+  type = number
+  description = ""
+}
+
+variable "key_pair_name" {
+  type = string
+  description = ""
+}
+
+variable "internal_alb_asg_max_size" {
+  type = number
+  description = ""
+}
+
+variable "internal_alb_asg_min_size" {
+  type = number
+  description = ""
+}
+
+variable "internal_alb_asg_desried_size" {
+  type = number
+  description = ""
+}
