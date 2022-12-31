@@ -1,3 +1,7 @@
+#----------------------------------------------------
+#----------------- Common Variables -----------------
+#----------------------------------------------------
+
 variable "region" {
   type    = string
   default = "us-east-1"
@@ -31,6 +35,11 @@ variable "public_subnets" {
 
 variable "my_ip_cidr" {
   type        = any
+  description = ""
+}
+
+variable "key_pair_name" {
+  type = string
   description = ""
 }
 
@@ -73,11 +82,6 @@ variable "internal_alb_lc_root_volume" {
   description = ""
 }
 
-variable "key_pair_name" {
-  type = string
-  description = ""
-}
-
 variable "internal_alb_asg_max_size" {
   type = number
   description = ""
@@ -89,6 +93,35 @@ variable "internal_alb_asg_min_size" {
 }
 
 variable "internal_alb_asg_desried_size" {
+  type = number
+  description = ""
+}
+
+#---------------------------------------------
+#----------------- Public LB -----------------
+#---------------------------------------------
+
+variable "external_alb_lc_instance_type" {
+  type = string
+  description = ""
+}
+
+variable "external_alb_lc_root_volume" {
+  type = number
+  description = ""
+}
+
+variable "external_alb_asg_max_size" {
+  type = number
+  description = ""
+}
+
+variable "external_alb_asg_min_size" {
+  type = number
+  description = ""
+}
+
+variable "external_alb_asg_desired_size" {
   type = number
   description = ""
 }

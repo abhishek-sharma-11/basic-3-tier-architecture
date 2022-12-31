@@ -28,7 +28,7 @@ resource "aws_security_group" "external_alb" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.my_ip_cidr
   }
 
   egress {
@@ -54,7 +54,7 @@ resource "aws_lb" "external_alb" {
   security_groups    = [aws_security_group.external_alb.id]
   subnets            = var.public_subnets
 
-  enable_deletion_protection = false
+  enable_deletion_protection = var.enable_deletion_protection
 }
 
 #------------------------------------------------
@@ -108,15 +108,15 @@ data "aws_ami" "ubuntu" {
 resource "aws_launch_configuration" "external_alb_lc" {
   name          = "${var.project_name_prefix}-external-alb-lc"
   image_id      = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro"
+  instance_type = var.external_alb_lc_instance_type
 
   root_block_device {
-    volume_size = 10  
+    volume_size = var.external_alb_lc_root_volume
   }
 
   security_groups = [aws_security_group.external_alb.id]
 
-  key_name = "chalo-demo"
+  key_name = var.key_pair_name
 
   user_data = var.user_data
 }
@@ -132,11 +132,11 @@ resource "aws_placement_group" "external_alb_apg" {
 
 resource "aws_autoscaling_group" "external_alb_asg" {
   name                      = "${var.project_name_prefix}-external-alb-asg"
-  max_size                  = 2
-  min_size                  = 1
+  max_size                  = var.external_alb_asg_max_size
+  min_size                  = var.external_alb_asg_min_size
+  desired_capacity          = var.external_alb_asg_desired_size
   health_check_grace_period = 300
   health_check_type         = "ELB"
-  desired_capacity          = 2
   force_delete              = true
   placement_group           = aws_placement_group.external_alb_apg.id
   launch_configuration      = aws_launch_configuration.external_alb_lc.name

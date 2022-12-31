@@ -92,3 +92,16 @@ The project has the following folders and files:
 | internal_alb_asg_min_size |  | `number` | n/a | yes |
 | internal_alb_asg_desried_size |  | `number` | n/a | yes |
 | enable_deletion_protection |  | `bool` | n/a | no |
+
+
+## Public Load Balancer Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| external_alb_lc_instance_type |  | `string` | n/a | yes |
+| external_alb_lc_root_volume |  | `number` | n/a | yes |
+| key_pair_name |  | `string` | n/a | yes |
+| external_alb_asg_max_size |  | `number` | n/a | yes |
+| external_alb_asg_min_size |  | `number` | n/a | yes |
+| external_alb_asg_desried_size |  | `number` | n/a | yes |
+| enable_deletion_protection |  | `bool` | n/a | no |
