@@ -98,7 +98,7 @@ variable "internal_alb_asg_desried_size" {
 }
 
 variable "tomcat_user_data" {
-  type = string
+  type        = string
   description = ""
 }
 
@@ -132,7 +132,7 @@ variable "external_alb_asg_desired_size" {
 }
 
 variable "nginx_user_data" {
-  type = string
+  type        = string
   description = ""
 }
 

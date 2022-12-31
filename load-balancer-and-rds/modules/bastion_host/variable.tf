@@ -32,3 +32,8 @@ variable "my_ip_cidr" {
   type = any
   description = ""
 }
+
+variable "key_pair_name" {
+  type = string
+  description = ""
+}

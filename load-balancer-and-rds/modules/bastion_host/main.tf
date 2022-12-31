@@ -53,6 +53,7 @@ resource "aws_instance" "web" {
   availability_zone      = var.bastion_az
   subnet_id              = var.public_subnets[0]
   vpc_security_group_ids = [aws_security_group.bastion_host.id]
+  key_name               = var.key_pair_name
 
   tags = {
     Name = var.bastion_name
