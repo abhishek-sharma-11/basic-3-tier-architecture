@@ -28,3 +28,27 @@ variable "public_subnets" {
   type        = any
   description = ""
 }
+
+variable "my_ip_cidr" {
+  type        = any
+  description = ""
+}
+
+#-------------------------------------------------
+#----------------- Bastion Hosts -----------------
+#-------------------------------------------------
+
+variable "bastion_instance_type" {
+  type        = string
+  description = ""
+}
+
+variable "bastion_az" {
+  type        = string
+  description = ""
+}
+
+variable "bastion_name" {
+  type        = string
+  description = ""
+}

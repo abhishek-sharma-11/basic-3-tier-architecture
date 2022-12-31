@@ -12,3 +12,23 @@ variable "public_subnets" {
   type = any
   description = ""
 }
+
+variable "bastion_instance_type" {
+  type = string
+  description = ""
+}
+
+variable "bastion_az" {
+  type = string
+  description = ""  
+}
+
+variable "bastion_name" {
+  type = string
+  description = ""  
+}
+
+variable "my_ip_cidr" {
+  type = any
+  description = ""
+}

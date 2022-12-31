@@ -12,7 +12,7 @@ resource "aws_security_group" "bastion_host" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.my_ip_cidr
   }  
 
   egress {
@@ -23,7 +23,7 @@ resource "aws_security_group" "bastion_host" {
   }
 
   tags = {
-    "Name" = "${var.project_name_prefix}_internal_alb"
+    "Name" = "${var.project_name_prefix}-bastion-host"
   }
 }
 
@@ -49,12 +49,12 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "web" {
   ami                    = data.aws_ami.ubuntu.id
-  instance_type          = "t3.micro"
-  availability_zone      = "ap-south-1a"
+  instance_type          = var.bastion_instance_type
+  availability_zone      = var.bastion_az
   subnet_id              = var.public_subnets[0]
   vpc_security_group_ids = [aws_security_group.bastion_host.id]
 
   tags = {
-    Name = "Bastion-Host"
+    Name = var.bastion_name
   }
 }

@@ -31,4 +31,10 @@ module "bastion_host" {
   project_name_prefix = var.project_name_prefix
   vpc_id              = var.vpc_id
   public_subnets      = var.public_subnets
+  my_ip_cidr          = var.my_ip_cidr
+
+  bastion_instance_type = var.bastion_instance_type
+  bastion_az            = var.bastion_az
+  bastion_name          = var.bastion_name
+
 }
