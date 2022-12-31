@@ -117,4 +117,4 @@ The project has the following folders and files:
 | postgres_db_name |  | `string` | n/a | yes |
 | postgres_db_username |  | `string` | n/a | yes |
 | postgres_db_password |  | `string` | n/a | yes |
-| postgres_db_port |  | `number` | n/a | no |
+| postgres_db_port |  | `number` | n/a | yes |
