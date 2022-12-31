@@ -59,7 +59,7 @@ The project has the following folders and files:
 | lb_public | module |
 | postgres | module |
 
-## Inputs
+## Common Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -67,3 +67,13 @@ The project has the following folders and files:
 | project_name_prefix |  | `string` | n/a | yes |
 | common_tags |  | `map` | n/a | yes |
 | vpc_id |  | `string` | n/a | yes |
+| private_subnets |  | `list` | n/a | yes |
+| public_subnets |  | `list` | n/a | yes |
+
+## Bastion Hosts Inputs
+
+| Name | Description | Type | Default | Required |
+| my_ip_cidr |  | `list` | n/a | yes |
+| bastion_instance_type |  | `string` | n/a | yes |
+| bastion_az |  | `string` | n/a | yes |
+| bastion_name |  | `string` | n/a | yes |
