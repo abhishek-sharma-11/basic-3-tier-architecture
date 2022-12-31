@@ -73,6 +73,7 @@ The project has the following folders and files:
 ## Bastion Hosts Inputs
 
 | Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
 | my_ip_cidr |  | `list` | n/a | yes |
 | bastion_instance_type |  | `string` | n/a | yes |
 | bastion_az |  | `string` | n/a | yes |
