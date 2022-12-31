@@ -9,8 +9,8 @@ resource "aws_security_group" "internal_alb" {
 
   ingress {
     description = "Ingress rules Security group ${var.project_name_prefix} Internal ALB"
-    from_port   = 5432
-    to_port     = 5432
+    from_port   = 8080
+    to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -56,7 +56,7 @@ resource "aws_lb" "internal_alb" {
 resource "aws_lb_target_group" "internal_alb_tg" {
   depends_on = [aws_lb.internal_alb]
   name     = "${var.project_name_prefix}-internal-alb-tg"
-  port     = 80
+  port     = 8080
   protocol = "HTTP"
   vpc_id   = var.vpc_id
 }
@@ -68,7 +68,7 @@ resource "aws_lb_target_group" "internal_alb_tg" {
 resource "aws_lb_listener" "internal_alb_listener" {
   load_balancer_arn = aws_lb.internal_alb.arn
 
-  port              = 80
+  port              = 8080
   protocol          = "HTTP"
 
   default_action {
