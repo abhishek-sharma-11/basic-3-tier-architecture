@@ -97,6 +97,11 @@ variable "internal_alb_asg_desried_size" {
   description = ""
 }
 
+variable "tomcat_user_data" {
+  type = string
+  description = ""
+}
+
 #---------------------------------------------
 #----------------- Public LB -----------------
 #---------------------------------------------
@@ -123,6 +128,11 @@ variable "external_alb_asg_min_size" {
 
 variable "external_alb_asg_desired_size" {
   type        = number
+  description = ""
+}
+
+variable "nginx_user_data" {
+  type = string
   description = ""
 }
 

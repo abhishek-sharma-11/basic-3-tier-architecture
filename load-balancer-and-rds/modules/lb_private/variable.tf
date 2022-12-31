@@ -53,3 +53,8 @@ variable "internal_alb_asg_desried_size" {
   type = number
   description = ""
 }
+
+variable "user_data" {
+  type = any
+  description = ""
+}

@@ -109,6 +109,8 @@ resource "aws_launch_configuration" "internal_alb_lc" {
   security_groups = [aws_security_group.internal_alb.id]
 
   key_name = var.key_pair_name
+
+  user_data = var.user_data
 }
 
 #------------------------------------------------------

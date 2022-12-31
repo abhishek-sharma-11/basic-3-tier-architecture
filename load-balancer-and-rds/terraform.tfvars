@@ -28,6 +28,7 @@ internal_alb_lc_root_volume   = 10
 internal_alb_asg_max_size     = 2
 internal_alb_asg_min_size     = 1
 internal_alb_asg_desried_size = 2
+tomcat_user_data              = "tomcat-user-data.sh"
 # enable_deletion_protection = false     --------> Using default value as false. Change to true if required
 
 #---------------------------------------------
@@ -39,6 +40,7 @@ external_alb_lc_root_volume   = 10
 external_alb_asg_max_size     = 2
 external_alb_asg_min_size     = 1
 external_alb_asg_desired_size = 2
+nginx_user_data               = "nginx-user-data.sh"
 # enable_deletion_protection = false     --------> Using default value as false. Change to true if required
 
 

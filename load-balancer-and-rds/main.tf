@@ -17,6 +17,7 @@ module "load_balancer_private" {
 
   project_name_prefix = var.project_name_prefix
   vpc_id              = var.vpc_id
+  user_data           = file(var.tomcat_user_data)
   private_subnets     = var.private_subnets
   my_ip_cidr          = var.my_ip_cidr
 
@@ -35,7 +36,7 @@ module "load_balancer_public" {
 
   project_name_prefix = var.project_name_prefix
   vpc_id              = var.vpc_id
-  user_data           = file("nginx-user-data.sh")
+  user_data           = file(var.nginx_user_data)
   public_subnets      = var.public_subnets
   my_ip_cidr          = var.my_ip_cidr
 
