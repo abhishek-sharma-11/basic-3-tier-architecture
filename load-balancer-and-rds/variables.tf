@@ -39,7 +39,7 @@ variable "my_ip_cidr" {
 }
 
 variable "key_pair_name" {
-  type = string
+  type        = string
   description = ""
 }
 
@@ -67,33 +67,33 @@ variable "bastion_name" {
 #----------------------------------------------
 
 variable "enable_deletion_protection" {
-  type = bool
+  type        = bool
   description = ""
-  default = false
+  default     = false
 }
 
 variable "internal_alb_lc_instance_type" {
-  type = string
+  type        = string
   description = ""
 }
 
 variable "internal_alb_lc_root_volume" {
-  type = number
+  type        = number
   description = ""
 }
 
 variable "internal_alb_asg_max_size" {
-  type = number
+  type        = number
   description = ""
 }
 
 variable "internal_alb_asg_min_size" {
-  type = number
+  type        = number
   description = ""
 }
 
 variable "internal_alb_asg_desried_size" {
-  type = number
+  type        = number
   description = ""
 }
 
@@ -102,26 +102,66 @@ variable "internal_alb_asg_desried_size" {
 #---------------------------------------------
 
 variable "external_alb_lc_instance_type" {
-  type = string
+  type        = string
   description = ""
 }
 
 variable "external_alb_lc_root_volume" {
-  type = number
+  type        = number
   description = ""
 }
 
 variable "external_alb_asg_max_size" {
-  type = number
+  type        = number
   description = ""
 }
 
 variable "external_alb_asg_min_size" {
-  type = number
+  type        = number
   description = ""
 }
 
 variable "external_alb_asg_desired_size" {
-  type = number
+  type        = number
+  description = ""
+}
+
+
+#------------------------------------------------
+#----------------- Postgres RDS -----------------
+#------------------------------------------------
+
+variable "postgres_allocated_storage" {
+  type        = number
+  description = ""
+}
+
+variable "postgres_max_allocated_storage" {
+  type        = number
+  description = ""
+}
+
+variable "postgres_instance_class" {
+  type        = string
+  description = ""
+}
+
+variable "postgres_db_name" {
+  type        = string
+  description = ""
+}
+
+variable "postgres_db_username" {
+  type        = string
+  description = ""
+}
+
+variable "postgres_db_password" {
+  type        = string
+  description = ""
+}
+
+variable "postgres_db_port" {
+  type        = number
   description = ""
 }

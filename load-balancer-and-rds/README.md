@@ -69,13 +69,13 @@ The project has the following folders and files:
 | vpc_id |  | `string` | n/a | yes |
 | private_subnets |  | `list` | n/a | yes |
 | public_subnets |  | `list` | n/a | yes |
+| my_ip_cidr |  | `list` | n/a | yes |
 
 
 ## Bastion Hosts Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| my_ip_cidr |  | `list` | n/a | yes |
 | bastion_instance_type |  | `string` | n/a | yes |
 | bastion_az |  | `string` | n/a | yes |
 | bastion_name |  | `string` | n/a | yes |
@@ -105,3 +105,16 @@ The project has the following folders and files:
 | external_alb_asg_min_size |  | `number` | n/a | yes |
 | external_alb_asg_desried_size |  | `number` | n/a | yes |
 | enable_deletion_protection |  | `bool` | n/a | no |
+
+
+## Postgres RDS Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| postgres_allocated_storage |  | `number` | n/a | yes |
+| postgres_max_allocated_storage |  | `number` | n/a | yes |
+| postgres_instance_class |  | `string` | n/a | yes |
+| postgres_db_name |  | `string` | n/a | yes |
+| postgres_db_username |  | `string` | n/a | yes |
+| postgres_db_password |  | `string` | n/a | yes |
+| postgres_db_port |  | `number` | n/a | no |

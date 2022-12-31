@@ -20,7 +20,7 @@ resource "aws_security_group" "postgres" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.my_ip_cidr
   }
 
   egress {
@@ -51,17 +51,17 @@ resource "aws_docdb_subnet_group" "postgres_subnet_group" {
 
 resource "aws_db_instance" "postgres" {
   identifier             = "${var.project_name_prefix}-postgres" 
-  allocated_storage      = 10
-  max_allocated_storage  = 30
+  allocated_storage      = var.postgres_allocated_storage
+  max_allocated_storage  = var.postgres_max_allocated_storage
 
   engine                 = "postgres"
   engine_version         = "14"
-  instance_class         = "db.t3.micro"
+  instance_class         = var.postgres_instance_class
 
-  db_name                = "mydb"
-  username               = "foo"
-  password               = "foobarbaz"
-  port                   = 5432
+  db_name                = var.postgres_db_name
+  username               = var.postgres_db_username
+  password               = var.postgres_db_password
+  port                   = var.postgres_db_port
   
   skip_final_snapshot    = true
 
