@@ -68,3 +68,7 @@ module "postgres" {
   postgres_db_password           = var.postgres_db_password
   postgres_db_port               = var.postgres_db_port
 }
+
+module "security_group" {
+  source = "./modules/security_group"
+}
